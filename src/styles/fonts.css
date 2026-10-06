@@ -1,0 +1,41 @@
+/* Self-hosted, subsetted (Latin) WOFF2 files live in /public/fonts */
+
+@font-face {
+  font-family: "Promenade";
+  src: url("/fonts/Promenade-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Promenade";
+  src: url("/fonts/Promenade-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Citerne";
+  src: url("/fonts/Citerne-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Citerne";
+  src: url("/fonts/Citerne-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Citerne";
+  src: url("/fonts/Citerne-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

@@ -1,0 +1,63 @@
+/* ==========================================================
+   Design tokens — tweak the palette, type and motion here.
+   ========================================================== */
+:root {
+  /* Background family (base #C1CED5) */
+  --color-bg-50: #ebf0f2;
+  --color-bg-100: #dce4e8;
+  --color-bg-200: #ced8de;
+  --color-bg: #c1ced5;
+  --color-bg-300: #b2c1c9;
+  --color-bg-400: #a0b1bb;
+  --color-bg-500: #8a9ea9;
+
+  /* Accent (base #7E4846) */
+  --color-accent: #7e4846;
+  --color-accent-strong: #66393a;
+  --color-accent-soft: #a26f6c;
+  --color-accent-tint: rgb(126 72 70 / 0.1);
+
+  /* Text */
+  --color-text-primary: #1e272c;
+  --color-text-secondary: #34424a;
+  --color-text-muted: #46545c;
+  --color-text-on-accent: #e4ebee;
+
+  /* Lines & surfaces */
+  --color-line: rgb(30 39 44 / 0.18);
+  --color-line-strong: rgb(30 39 44 / 0.42);
+  --color-surface: var(--color-bg-100);
+  --color-surface-raised: var(--color-bg-50);
+
+  /* Typography */
+  --font-display: "Promenade", "Cormorant Garamond", "Didot", "Bodoni 72", Georgia, serif;
+  --font-body: "Citerne", "Helvetica Neue", "Inter", system-ui, -apple-system, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
+  --fs-md: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --fs-lg: clamp(1.5rem, 1.2rem + 1.4vw, 2.5rem);
+  --fs-xl: clamp(2.5rem, 1.6rem + 4.5vw, 6rem);
+  --fs-2xl: clamp(3.25rem, 1.5rem + 8.5vw, 10rem);
+  --fs-hero: clamp(3.75rem, 0.5rem + 15vw, 17rem);
+
+  --lh-tight: 0.92;
+  --lh-snug: 1.2;
+  --lh-body: 1.6;
+  --tracking-label: 0.14em;
+
+  /* Spacing & layout */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 3rem);
+  --space-section: clamp(6rem, 4rem + 10vw, 14rem);
+  --max-width: 1440px;
+  --radius: 2px;
+  --header-h: 4.5rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.3s;
+  --dur-base: 0.7s;
+  --dur-slow: 1.2s;
+}
