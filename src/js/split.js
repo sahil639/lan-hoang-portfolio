@@ -1,80 +1,94 @@
-// Text splitting helpers for line / character / word animations.
+// Split headings into masked lines so each line can slide up into place.
+// Inline elements (<em>, the accent dot) are preserved word by word.
 
-/** Wrap every character of each line in a mask so it can rise into place. */
-export function splitChars(root) {
-  let i = 0;
-  root.querySelectorAll('.hero__title-line').forEach((line) => {
-    const text = line.textContent.trim();
-    line.setAttribute('aria-hidden', 'true');
-    line.textContent = '';
-    for (const ch of text) {
-      const wrap = document.createElement('span');
-      wrap.className = 'char-wrap';
-      const inner = document.createElement('span');
-      inner.className = 'char';
-      inner.textContent = ch === ' ' ? ' ' : ch;
-      inner.style.setProperty('--delay', `${0.15 + i * 0.045}s`);
-      wrap.append(inner);
-      line.append(wrap);
-      i += 1;
+const originals = new WeakMap();
+
+function tokenize(el) {
+  const tokens = [];
+  const walk = (node, wrappers) => {
+    for (const child of [...node.childNodes]) {
+      if (child.nodeType === Node.TEXT_NODE) {
+        for (const word of child.textContent.split(/\s+/).filter(Boolean)) {
+          const token = document.createElement('span');
+          token.className = 'split-word';
+          let target = token;
+          for (const w of wrappers) {
+            const clone = w.cloneNode(false);
+            target.append(clone);
+            target = clone;
+          }
+          target.append(word);
+          tokens.push(token);
+        }
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        if (!child.textContent.trim()) tokens.push(child.cloneNode(true));
+        else walk(child, [...wrappers, child]);
+      }
     }
-  });
-  root.setAttribute('aria-label', root.dataset.label || 'Creative Producer');
+  };
+  walk(el, []);
+  return tokens;
 }
 
-/**
- * Split a heading into visual lines (after fonts load) so each line
- * can slide up from behind its own mask.
- */
 export function splitLines(el) {
-  const text = el.textContent.trim().replace(/\s+/g, ' ');
-  el.setAttribute('aria-label', text);
+  if (!originals.has(el)) {
+    originals.set(el, el.innerHTML);
+    el.setAttribute('aria-label', el.textContent.trim().replace(/\s+/g, ' '));
+  } else {
+    el.innerHTML = originals.get(el);
+  }
+
+  const tokens = tokenize(el);
   el.textContent = '';
+  tokens.forEach((t) => el.append(t, ' '));
 
-  const words = text.split(' ').map((w) => {
-    const s = document.createElement('span');
-    s.textContent = w;
-    s.style.display = 'inline-block';
-    el.append(s, ' ');
-    return s;
-  });
-
-  // Group words by their rendered line
+  // Group tokens by rendered line. Decorative tokens (the accent dot) sit on a
+  // different baseline, so they simply join the line of the next word.
   const lines = [];
+  let pending = [];
   let lastTop = null;
-  words.forEach((w) => {
-    const top = w.offsetTop;
+  for (const t of tokens) {
+    if (!t.classList.contains('split-word')) {
+      pending.push(t);
+      continue;
+    }
+    const top = t.offsetTop;
     if (lastTop === null || Math.abs(top - lastTop) > 4) {
       lines.push([]);
       lastTop = top;
     }
-    lines[lines.length - 1].push(w.textContent);
-  });
+    lines[lines.length - 1].push(...pending, t);
+    pending = [];
+  }
+  if (pending.length) lines.length ? lines[lines.length - 1].push(...pending) : lines.push(pending);
 
   el.textContent = '';
-  lines.forEach((words, i) => {
+  lines.forEach((line, i) => {
     const mask = document.createElement('span');
     mask.className = 'split-line';
     mask.setAttribute('aria-hidden', 'true');
     const inner = document.createElement('span');
-    inner.textContent = words.join(' ');
-    inner.style.setProperty('--delay', `${i * 0.1}s`);
+    inner.style.setProperty('--delay', `${i * 0.09}s`);
+    line.forEach((t, j) => inner.append(t, j < line.length - 1 ? ' ' : ''));
     mask.append(inner);
     el.append(mask);
   });
 }
 
-/** Wrap each word so its opacity can follow scroll progress. */
-export function splitWords(el) {
-  const text = el.textContent.trim().replace(/\s+/g, ' ');
-  el.setAttribute('aria-label', text);
-  el.textContent = '';
-  return text.split(' ').map((w) => {
-    const s = document.createElement('span');
-    s.className = 'word';
-    s.setAttribute('aria-hidden', 'true');
-    s.textContent = w;
-    el.append(s, ' ');
-    return s;
+/** Split once, then re-split when the width changes so lines stay accurate. */
+export function initSplitLines(reduceMotion) {
+  if (reduceMotion) return;
+  const els = [...document.querySelectorAll('[data-split-lines]')];
+  els.forEach(splitLines);
+
+  let lastWidth = window.innerWidth;
+  let timer;
+  window.addEventListener('resize', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      els.forEach(splitLines);
+    }, 150);
   });
 }

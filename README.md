@@ -1,8 +1,10 @@
 # Lana Hoang — Creative Producer
 
-Portfolio site for Lana Hoang. A single-page editorial site with smooth scrolling and
-scroll-driven reveals, built with [Vite](https://vite.dev) and plain HTML/CSS/JS, plus
-[Lenis](https://lenis.darkroom.engineering/) for smooth scroll.
+Multi-page editorial portfolio for Lana Hoang. Layout and page structure follow
+[signal-a.studio](https://signal-a.studio/): hairline grid nav, giant justified statements,
+case-study index rows with a cursor-following preview, case-study pages and an About / Contact pair.
+
+Built with [Vite](https://vite.dev), plain HTML/CSS/JS, and [Lenis](https://lenis.darkroom.engineering/) for smooth scrolling.
 
 ## Develop
 
@@ -15,74 +17,72 @@ npm run preview  # serve the production build
 
 ## Deploy (Vercel)
 
-Import the repo in Vercel. `vercel.json` already sets the Vite framework preset,
-`npm run build` and the `dist` output, so no configuration is needed. `/` renders the full portfolio.
+Import the repo in Vercel; `vercel.json` sets the Vite preset, build command, `dist` output and
+clean URLs (`/about`, `/case-studies/itvc`). No other configuration is needed.
+
+## Pages
+
+| URL | File |
+| --- | --- |
+| `/` | `index.html` |
+| `/case-studies` | `case-studies/index.html` |
+| `/case-studies/itvc` | `case-studies/itvc/index.html` (5 spots, storyboards, set design) |
+| `/case-studies/commercial-photoshoot` | `case-studies/commercial-photoshoot/index.html` (incl. BTS) |
+| `/case-studies/video-ads` | `case-studies/video-ads/index.html` |
+| `/case-studies/food-photography` | `case-studies/food-photography/index.html` |
+| `/case-studies/modelling` | `case-studies/modelling/index.html` |
+| `/about` | `about/index.html` |
+| `/contact` | `contact/index.html` |
+
+Any new `*.html` file is picked up as a page automatically.
 
 ## Structure
 
 ```
-index.html                 All page content (semantic sections, one per chapter)
-public/
-  fonts/                   Promenade + Citerne, self-hosted WOFF2 (Latin subset)
-  favicon.svg
-src/
-  main.js                  Entry: imports styles, boots motion modules
-  styles/
-    tokens.css             Design tokens: colors, type scale, spacing, motion
-    fonts.css              @font-face declarations
-    base.css               Reset, globals, links, utilities
-    components.css         Header, progress bar, placeholders, reveal system
-    sections.css           Per-section layout (hero, about, chapters, contact)
-  js/
-    smooth-scroll.js       Lenis setup + anchor links
-    split.js               Character / line / word splitting
-    reveal.js              IntersectionObserver reveals + stat counters
-    scroll-effects.js      Parallax, hero fade, pinned horizontal gallery,
-                           word highlight, header state, current-chapter label
+site.config.js        Email / Instagram / LinkedIn — edit once, used on every page
+vite.config.js        Multi-page build + tiny template layer (see below)
+src/partials/         head, header, footer, cases (the case-study list)
+src/data/images.json  Generated image sizes used to build responsive <img> tags
+src/styles/           tokens, fonts, base, layout, components, pages
+src/js/               smooth-scroll, split (line reveals), reveal, scroll (parallax/header), interactions
+public/images/        WebP images, each at 800px and 1600px wide
+public/fonts/         Promenade + Citerne (WOFF2)
 ```
+
+### Template shorthand
+
+The build expands these in every HTML page:
+
+```html
+<!-- @include footer -->                                        → src/partials/footer.html
+<x-img name="product-01" alt="…" sizes="50vw" zoom />           → responsive <img> in a .media frame
+<x-img name="set-02" ratio="21 / 9" speed="0.1" eager />        → crop ratio, parallax, no lazy-load
+<x-video id="DRIVE_FILE_ID" poster="poster-ad-cc-01" title="…" /> → poster + Drive player on click
+%SITE_EMAIL% %SITE_INSTAGRAM% %SITE_LINKEDIN% %YEAR%
+```
+
+`zoom` opens the image in the lightbox. Every image gets the hover effect (frame tightens, photo pushes in).
+
+### Adding images
+
+1. Export a WebP at 800px and 1600px wide into `public/images/` as `name-800.webp` and `name-1600.webp`.
+2. Add an entry to `src/data/images.json` (`files` with real widths, plus `w`/`h` of the largest file).
+3. Use `<x-img name="name" alt="…" />`.
+
+### Videos
+
+Videos play through Google Drive's embedded player (`https://drive.google.com/file/d/ID/preview`) and only
+load when someone clicks Play. The files must stay shared as "Anyone with the link".
 
 ## Design tokens
 
-Edit `src/styles/tokens.css`:
-
-| Token | Value | Use |
-| --- | --- | --- |
-| `--color-bg` | `#C1CED5` | Base background (tints `--color-bg-50` … `--color-bg-500`) |
-| `--color-accent` | `#7E4846` | Headlines, links, hovers, details |
-| `--color-text-primary` / `-secondary` / `-muted` | slate greys | Body copy hierarchy |
-| `--font-display` | Promenade | Headlines |
-| `--font-body` | Citerne | Subtitles, body, UI labels |
-
-## Adding real media
-
-Every image or video slot is a placeholder like:
-
-```html
-<figure class="ph" style="--ratio: 3 / 4" data-reveal="image">
-  <div class="ph__inner" data-speed="0.05"><span class="ph__label">[IMAGE – …]</span></div>
-</figure>
-```
-
-Replace the `<span class="ph__label">` with an `<img>` or `<video>` (styled
-`width:100%; height:100%; object-fit:cover`) and keep the wrapper so the reveal and parallax still work.
-Put files in `public/images/` or `public/video/`.
-
-## Motion
-
-- Lenis smooth scroll; anchor links glide to sections
-- Hero title rises in character by character, then drifts and fades on scroll
-- Headings reveal line by line from behind masks; blocks fade/slide up
-- Images open with a curtain wipe and get light parallax inside their frames
-- About statement lights up word by word as you scroll
-- Set Design is a pinned, scroll-driven horizontal gallery
-- Instagram view counts count up when they come into view
-- Header hides on scroll down, shows on scroll up, and names the current chapter
-
-`prefers-reduced-motion` turns all of this off: native scroll, static content, and a swipeable Set Design row.
+`src/styles/tokens.css` — background `#C1CED5` (+ tints `--color-bg-50 … 500`), accent `#7E4846`,
+text colours, type scale, spacing and easing. Headlines use Promenade; body and labels use Citerne.
 
 ## Content to finalise
 
-- About bio (draft written from the work in the portfolio plan)
-- Contact email, Instagram, LinkedIn, CV link (placeholders in the footer)
-- Hero line "and what my works are about!" (flagged in the plan for review)
-- "5.3M+ combined views" adds up the four iTVC spots (1.3M + 1.5M + 2M + 482K)
+- `site.config.js`: real email, Instagram and LinkedIn (placeholders show `[EMAIL]` / `#` until then).
+  The contact form opens the visitor's email app with a pre-filled message to that address.
+- Drafted copy to review with Lana: case-study write-ups, About bio, process/services, FAQ answers.
+- "10.8M+" is the sum of the six iTVC performance screenshots (4.1M + 2M + 1.5M + 1.5M + 1.3M + 482K).
+- The Luna Shot "Is there an all-in-one solution?" spot (4.1M) has a screenshot but no video file yet.

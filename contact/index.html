@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head -->
+    <title>Contact — Lana Hoang</title>
+    <meta name="description" content="Start a project with creative producer Lana Hoang." />
+  </head>
+  <body data-page="contact" id="top">
+    <!-- @include header -->
+
+    <main id="main">
+      <section class="contact-hero container">
+        <h1 class="contact-hero__title" data-split-lines>Contact</h1>
+      </section>
+
+      <section class="contact-grid container">
+        <div class="contact-grid__intro">
+          <p class="label">( Start a project )</p>
+          <p class="statement statement--md" data-split-lines>
+            Tell Lana about your idea, your product and your timeline.
+          </p>
+          <a class="contact-mail" href="%SITE_EMAIL_HREF%" data-reveal="up">%SITE_EMAIL% <span aria-hidden="true">↗</span></a>
+          <ul class="contact-links" data-reveal="up">
+            <li><a class="link" href="%SITE_INSTAGRAM%" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a class="link" href="%SITE_LINKEDIN%" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          </ul>
+        </div>
+
+        <form class="form" data-contact-form novalidate>
+          <p class="label">( Contact form )</p>
+          <div class="form__field" data-reveal="up">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="form__field" data-reveal="up">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form__field" data-reveal="up">
+            <label for="f-brand">Brand / Company</label>
+            <input id="f-brand" name="brand" type="text" autocomplete="organization" />
+          </div>
+          <fieldset class="form__field form__chips" data-reveal="up">
+            <legend>Project type</legend>
+            <label><input type="checkbox" name="type" value="iTVC" /><span>iTVC</span></label>
+            <label><input type="checkbox" name="type" value="Photoshoot" /><span>Photoshoot</span></label>
+            <label><input type="checkbox" name="type" value="Video ads" /><span>Video ads</span></label>
+            <label><input type="checkbox" name="type" value="Art direction" /><span>Art direction</span></label>
+            <label><input type="checkbox" name="type" value="Other" /><span>Other</span></label>
+          </fieldset>
+          <div class="form__field" data-reveal="up">
+            <label for="f-message">Tell me about the project</label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form__foot" data-reveal="up">
+            <button class="cta cta--button" type="submit"><span data-scramble>Send message</span><span class="cta__arrow" aria-hidden="true">→</span></button>
+            <p class="form__status" role="status" data-form-status></p>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============ FAQ ============ -->
+      <section class="section container" aria-labelledby="faq-title">
+        <div class="faq">
+          <h2 class="label faq__label" id="faq-title">Frequently asked questions</h2>
+          <div class="faq__list">
+            <details data-reveal="up">
+              <summary>What does a creative producer do?<span aria-hidden="true"></span></summary>
+              <p>A creative producer sits between the idea and the shoot. Lana shapes the concept and the visuals, then plans and runs the production that brings them to life — so one person owns both the creative and the delivery.</p>
+            </details>
+            <details data-reveal="up">
+              <summary>What kind of projects do you take on?<span aria-hidden="true"></span></summary>
+              <p>iTVCs and short-form brand films, product and campaign photoshoots, and performance video ads for social — especially for food, beverage, beauty and wellness brands.</p>
+            </details>
+            <details data-reveal="up">
+              <summary>Can you work with my in-house team or agency?<span aria-hidden="true"></span></summary>
+              <p>Yes. Lana can lead a production end to end, or plug into an existing team as producer, art director or set designer.</p>
+            </details>
+            <details data-reveal="up">
+              <summary>Do you handle both video and photo?<span aria-hidden="true"></span></summary>
+              <p>Yes — many projects capture both on the same set, which keeps the campaign visually consistent and the budget efficient.</p>
+            </details>
+            <details data-reveal="up">
+              <summary>How does a project start?<span aria-hidden="true"></span></summary>
+              <p>Send a short note through the form with your product, goal and timing. Lana will reply to set up a call, then follow with a concept and production plan.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>
