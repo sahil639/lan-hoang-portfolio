@@ -12,7 +12,7 @@
 }
 .sans-bold,
 b {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
 }
 .justify {
@@ -20,7 +20,7 @@ b {
   text-align-last: justify;
 }
 .arrow {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: 1.4em;
   line-height: 1;
   transition: transform 0.5s var(--ease-out);
@@ -162,7 +162,7 @@ b {
 }
 .hero__label {
   margin-top: 5.6vw;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-md);
   text-align: center;
@@ -225,7 +225,7 @@ b {
   column-gap: var(--gap);
   width: calc(3 * var(--col) + 2 * var(--gap));
   margin: 4.2vw auto 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
   line-height: 1.25;
@@ -294,7 +294,7 @@ b {
 /* ---------- Section title (bold grotesk + full rule) ---------- */
 .section-title {
   padding: 0 var(--margin) 1.35vw;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-md);
   line-height: 1;
@@ -372,7 +372,7 @@ b {
   pointer-events: none;
 }
 .case-row[data-face="bold"] .case-row__title {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.03em;
@@ -549,7 +549,7 @@ b {
   border-bottom: 1px solid var(--color-line);
 }
 .ledger__name {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -560,7 +560,7 @@ b {
   margin-top: 4.5vw;
   padding: 0.9vw 0;
   border-bottom: 1px solid var(--color-line);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -604,7 +604,7 @@ b {
 }
 .footer__brand,
 .footer__cta {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -662,7 +662,7 @@ b {
   text-transform: none;
 }
 .marquee__bold {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   letter-spacing: -0.03em;
   font-size: 0.86em;
@@ -676,7 +676,7 @@ b {
 .marquee__mark {
   align-self: flex-start;
   margin-top: 0.25em;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -851,7 +851,7 @@ b {
   right: var(--margin);
 }
 .lightbox__nav {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: 1.6rem;
 }
 .lightbox button:hover {

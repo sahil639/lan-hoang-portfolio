@@ -11,7 +11,7 @@
 
 /* Bold, justified uppercase copy block (reference's grotesk paragraphs) */
 .bold-copy {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
   line-height: 1.08;
@@ -20,7 +20,7 @@
 }
 /* Regular paragraph copy */
 .body-copy {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 400;
   font-size: var(--fs-body);
   line-height: 1.35;
@@ -235,7 +235,7 @@
 .more-cases__name {
   grid-column: 1;
   align-self: end;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -356,7 +356,7 @@
 .process__title {
   grid-column: 4 / span 3;
   padding-bottom: 0.6vw;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -398,7 +398,7 @@
   margin-left: calc(0.6 * var(--col));
 }
 .on-set__text h2 {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -417,7 +417,7 @@
 .services__title {
   grid-column: 1 / -1;
   text-align: right;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -428,7 +428,7 @@
   margin-top: 0.4vw;
   padding-bottom: 0.9vw;
   border-bottom: 1px solid var(--color-line);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -506,7 +506,7 @@
   padding: 0.9vw 0;
 }
 .contact-list__label {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -525,7 +525,7 @@
   align-items: center;
   padding: 0.9vw 0;
   border-bottom: 1px solid var(--color-line);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--fs-sans-sm);
 }
@@ -676,7 +676,7 @@
 .faq details p {
   padding: 0.2vw 0 1.2vw;
   max-width: 60ch;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--fs-body);
   line-height: 1.4;
   text-transform: none;

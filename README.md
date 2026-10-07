@@ -83,13 +83,12 @@ six-column grid (`--margin`, `--gap`, `--col`) and the type scale, sized in `vw`
 | Role | Font |
 | --- | --- |
 | Statements, titles | Montmarte (Regular / Italic) |
-| Nav, labels, small text | GT America Mono (Regular / Light) |
-| Emphasis words, small headings | GT America Standard Bold |
-| Paragraphs | GT America Standard Regular |
+| Everything else — nav, labels, paragraphs | GT America Mono (Light / Regular) |
+| Emphasis words, small headings | GT America Mono Bold |
 
-**The GT America files are Grilli Type trial fonts.** They contain only letters, digits and `, - .`
+**The GT America Mono files are Grilli Type trial fonts.** They contain only letters, digits and `, - .`
 (other characters render as a "Grilli Trial" stamp), so each `@font-face` is limited with
-`unicode-range` and punctuation falls back to small IBM Plex Mono / Inter subsets from Google Fonts.
+`unicode-range` and punctuation falls back to a small IBM Plex Mono subset from Google Fonts.
 Trial fonts are not licensed for a live website — buy web licences before launch and swap the files in
 `public/fonts/`; the fallback workaround can then be removed.
 

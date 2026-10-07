@@ -1,11 +1,11 @@
 /* ==========================================================
    Fonts
    Montmarte          — display (statements, titles)
-   GT America Mono    — UI, labels, small text
-   GT America Bold    — emphasis words & small headings (mirrors the reference's grotesk)
-   The GT America files are TRIAL cuts: they only contain letters, digits and
-   ", - ." — so each face is limited with unicode-range and punctuation falls
-   back to tiny IBM Plex Mono / Inter subsets (see head.html).
+   GT America Mono    — everything else: UI, labels, body copy (Light / Regular)
+                        and emphasis words & small headings (Bold)
+   The GT America Mono files are TRIAL cuts: they only contain letters, digits
+   and ", - ." — so each face is limited with unicode-range and punctuation
+   falls back to a tiny IBM Plex Mono subset (see head.html).
    ========================================================== */
 
 @font-face {
@@ -37,15 +37,8 @@
   unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00A0, U+00C0-017E;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("/fonts/GTAmerica-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: block;
-  unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00A0, U+00C0-017E;
-}
-@font-face {
-  font-family: "GT America";
-  src: url("/fonts/GTAmerica-Bold.woff2") format("woff2");
+  font-family: "GT America Mono";
+  src: url("/fonts/GTAmericaMono-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: block;
   unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00A0, U+00C0-017E;

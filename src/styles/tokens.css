@@ -21,7 +21,6 @@
   /* Type */
   --font-display: "Montmarte", "Cormorant Garamond", "Times New Roman", serif;
   --font-mono: "GT America Mono", "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-sans: "GT America", "Inter", "Helvetica Neue", Arial, sans-serif;
 
   --fs-mono: clamp(10px, 0.8vw, 13px);
   --fs-sans-sm: clamp(12px, 1vw, 16px);
