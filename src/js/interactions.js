@@ -133,6 +133,7 @@ export function initContactForm(email) {
       `Name: ${data.get('name')}`,
       `Email: ${data.get('email')}`,
       `Brand: ${data.get('brand') || '—'}`,
+      `Budget and timeline: ${data.get('budget') || '—'}`,
       `Project type: ${types}`,
       '',
       data.get('message'),

@@ -14,8 +14,13 @@
       <section class="contact-cols grid">
         <div class="contact-cols__left">
           <p class="panel-head" data-scramble-in>Start a project</p>
-          <p class="body-copy">Tell Lana about your idea, your product and your timeline to discuss your next project and how she can help produce it.</p>
-          <a class="contact-mail" href="%SITE_EMAIL_HREF%"><span>%SITE_EMAIL%</span><span class="arrow" aria-hidden="true">⟶</span></a>
+          <p class="body-copy">Tell Lana about your idea, your product, your timeline and your budget — she will plan a production that fits it.</p>
+          <ul class="contact-list">
+            <li><a href="%SITE_EMAIL_HREF%"><span class="contact-list__label">Mail</span><span class="contact-list__value">%SITE_EMAIL%</span><span class="arrow" aria-hidden="true">⟶</span></a></li>
+            <li><a href="%SITE_WHATSAPP%" target="_blank" rel="noopener"><span class="contact-list__label">WhatsApp</span><span class="contact-list__value">%SITE_PHONE%</span><span class="arrow" aria-hidden="true">⟶</span></a></li>
+            <li><a href="%SITE_ZALO%" target="_blank" rel="noopener"><span class="contact-list__label">Zalo</span><span class="contact-list__value">%SITE_PHONE%</span><span class="arrow" aria-hidden="true">⟶</span></a></li>
+            <li><a href="%SITE_INSTAGRAM%" target="_blank" rel="noopener"><span class="contact-list__label">Instagram</span><span class="contact-list__value">%SITE_INSTAGRAM_HANDLE%</span><span class="arrow" aria-hidden="true">⟶</span></a></li>
+          </ul>
         </div>
 
         <div class="contact-cols__right">
@@ -23,12 +28,14 @@
           <form class="form" data-contact-form novalidate>
             <div class="form__field"><label class="visually-hidden" for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required /></div>
             <div class="form__field"><label class="visually-hidden" for="f-brand">Brand or company</label><input id="f-brand" name="brand" type="text" autocomplete="organization" placeholder="Brand or company name" /></div>
+            <div class="form__field"><label class="visually-hidden" for="f-budget">Budget and timeline</label><input id="f-budget" name="budget" type="text" placeholder="Budget and timeline" /></div>
             <div class="form__field"><label class="visually-hidden" for="f-email">Your email address</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required /></div>
             <fieldset class="form__field form__chips">
               <legend>Project type</legend>
               <label><input type="checkbox" name="type" value="iTVC" /><span>iTVC</span></label>
               <label><input type="checkbox" name="type" value="Photoshoot" /><span>Photoshoot</span></label>
               <label><input type="checkbox" name="type" value="Video ads" /><span>Video ads</span></label>
+              <label><input type="checkbox" name="type" value="Producing" /><span>Producing</span></label>
               <label><input type="checkbox" name="type" value="Art direction" /><span>Art direction</span></label>
               <label><input type="checkbox" name="type" value="Other" /><span>Other</span></label>
             </fieldset>
@@ -42,7 +49,8 @@
       <section class="faq grid" aria-labelledby="faq-title">
         <h2 class="faq__label" id="faq-title">Frequently asked questions</h2>
         <div class="faq__list">
-          <details><summary>What does a creative producer do?</summary><p>A creative producer sits between the idea and the shoot. Lana shapes the concept and the visuals, then plans and runs the production that brings them to life — so one person owns both the creative and the delivery.</p></details>
+          <details><summary>What does a creative producer do?</summary><p>A creative producer runs the project. Lana leads the crew, manages the schedule and controls the budget, while shaping the concept and visuals — so one person owns both the creative and the delivery.</p></details>
+          <details><summary>Can you work within a fixed budget?</summary><p>Yes. Fitting the shoot to the budget is part of the job — Lana plans locations, crew, cast and shoot days around what is available, and optimises the shooting so the budget goes on what ends up on screen.</p></details>
           <details><summary>What kind of projects do you take on?</summary><p>iTVCs and short-form brand films, product and campaign photoshoots, and performance video ads for social — especially for food, beverage, beauty and wellness brands.</p></details>
           <details><summary>Can you work with my in-house team or agency?</summary><p>Yes. Lana can lead a production end to end, or plug into an existing team as producer, art director or set designer.</p></details>
           <details><summary>Do you handle both video and photo?</summary><p>Yes — many projects capture both on the same set, which keeps the campaign visually consistent and the budget efficient.</p></details>

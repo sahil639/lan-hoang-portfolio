@@ -2,12 +2,13 @@
 export default {
   name: 'Lana Hoang',
   role: 'Creative Producer',
-  // TODO: fill in Lana's real details — leave empty to show a visible placeholder.
-  email: '',
-  instagram: '',
-  linkedin: '',
+  email: 'hoanglehuonglan@gmail.com',
+  instagram: 'https://www.instagram.com/itake88bulletsforyou/',
+  instagramHandle: '@itake88bulletsforyou',
+  // Same number for Zalo and WhatsApp
+  phone: '(+84) 968 215 083',
+  phoneIntl: '84968215083',
   // Clock under the nav (any IANA timezone) and the two place labels beside it.
-  // Assumption: Lana is based in Vietnam — change if not.
   timezone: 'Asia/Ho_Chi_Minh',
   timezoneLabel: 'ICT  UTC/GMT +7',
   places: ['Vietnam', 'Worldwide'],

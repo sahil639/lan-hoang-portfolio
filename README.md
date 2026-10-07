@@ -40,7 +40,7 @@ Any new `*.html` file is picked up as a page automatically.
 ## Structure
 
 ```
-site.config.js        Email / Instagram / LinkedIn — edit once, used on every page
+site.config.js        Email, phone (WhatsApp/Zalo), Instagram, clock — edit once, used on every page
 vite.config.js        Multi-page build + tiny template layer (see below)
 src/partials/         head, header, footer, cases (the case-study list)
 src/data/images.json  Generated image sizes used to build responsive <img> tags
@@ -59,7 +59,7 @@ The build expands these in every HTML page:
 <x-img name="product-01" alt="…" sizes="50vw" zoom />           → responsive <img> in a .media frame
 <x-img name="set-02" ratio="21 / 9" speed="0.1" eager />        → crop ratio, parallax, no lazy-load
 <x-video id="DRIVE_FILE_ID" poster="poster-ad-cc-01" title="…" /> → poster + Drive player on click
-%SITE_EMAIL% %SITE_INSTAGRAM% %SITE_LINKEDIN% %YEAR%
+%SITE_EMAIL% %SITE_PHONE% %SITE_WHATSAPP% %SITE_ZALO% %SITE_INSTAGRAM% %YEAR%
 ```
 
 `zoom` opens the image in the lightbox. Every image gets the hover effect (frame tightens, photo pushes in).
@@ -104,8 +104,8 @@ Trial fonts are not licensed for a live website — buy web licences before laun
 
 ## Content to finalise
 
-- `site.config.js`: real email, Instagram and LinkedIn (placeholders show `[EMAIL]` / `#` until then).
-  The contact form opens the visitor's email app with a pre-filled message to that address.
+- Contact details live in `site.config.js`. The contact form opens the visitor's email app with a pre-filled
+  message to Lana's address.
 - Drafted copy to review with Lana: case-study write-ups, About bio, process/services, FAQ answers.
 - "10.8M+" is the sum of the six iTVC performance screenshots (4.1M + 2M + 1.5M + 1.5M + 1.3M + 482K).
 - The Luna Shot "Is there an all-in-one solution?" spot (4.1M) has a screenshot but no video file yet.

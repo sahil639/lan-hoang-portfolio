@@ -896,3 +896,12 @@ b {
     margin-top: 2.5rem;
   }
 }
+
+.footer__links--contact {
+  grid-column: 6;
+}
+@media (max-width: 760px) {
+  .footer__links--contact {
+    grid-column: auto;
+  }
+}
