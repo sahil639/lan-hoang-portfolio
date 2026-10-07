@@ -6,4 +6,9 @@ export default {
   email: '',
   instagram: '',
   linkedin: '',
+  // Clock under the nav (any IANA timezone) and the two place labels beside it.
+  // Assumption: Lana is based in Vietnam — change if not.
+  timezone: 'Asia/Ho_Chi_Minh',
+  timezoneLabel: 'ICT  UTC/GMT +7',
+  places: ['Vietnam', 'Worldwide'],
 };

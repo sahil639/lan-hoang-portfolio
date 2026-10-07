@@ -1,11 +1,9 @@
-// Scroll-linked effects: header state and image parallax.
+// Scroll-linked image parallax.
 
 const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 
 export function initScroll({ reduceMotion, onScroll }) {
-  const header = document.querySelector('[data-header]');
   let vh = window.innerHeight;
-  let lastY = window.scrollY;
   let items = [];
 
   function measure() {
@@ -27,14 +25,6 @@ export function initScroll({ reduceMotion, onScroll }) {
 
   function update() {
     const y = window.scrollY;
-
-    if (header) {
-      header.classList.toggle('is-scrolled', y > 30);
-      if (y > lastY + 3 && y > vh * 0.5) header.classList.add('is-hidden');
-      else if (y < lastY - 3) header.classList.remove('is-hidden');
-    }
-    lastY = y;
-
     if (reduceMotion) return;
     for (const item of items) {
       const dist = item.center - (y + vh / 2);

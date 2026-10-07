@@ -31,6 +31,7 @@ clean URLs (`/about`, `/case-studies/itvc`). No other configuration is needed.
 | `/case-studies/video-ads` | `case-studies/video-ads/index.html` |
 | `/case-studies/food-photography` | `case-studies/food-photography/index.html` |
 | `/case-studies/modelling` | `case-studies/modelling/index.html` |
+| `/archive` | `archive/index.html` (every image, filterable) |
 | `/about` | `about/index.html` |
 | `/contact` | `contact/index.html` |
 
@@ -74,10 +75,32 @@ The build expands these in every HTML page:
 Videos play through Google Drive's embedded player (`https://drive.google.com/file/d/ID/preview`) and only
 load when someone clicks Play. The files must stay shared as "Anyone with the link".
 
-## Design tokens
+## Design system
 
-`src/styles/tokens.css` — background `#C1CED5` (+ tints `--color-bg-50 … 500`), accent `#7E4846`,
-text colours, type scale, spacing and easing. Headlines use Promenade; body and labels use Citerne.
+`src/styles/tokens.css` holds the palette (background `#C1CED5` + tints, accent `#7E4846`), the
+six-column grid (`--margin`, `--gap`, `--col`) and the type scale, sized in `vw` to mirror the reference.
+
+| Role | Font |
+| --- | --- |
+| Statements, titles | Montmarte (Regular / Italic) |
+| Nav, labels, small text | GT America Mono (Regular / Light) |
+| Emphasis words, small headings | GT America Standard Bold |
+| Paragraphs | GT America Standard Regular |
+
+**The GT America files are Grilli Type trial fonts.** They contain only letters, digits and `, - .`
+(other characters render as a "Grilli Trial" stamp), so each `@font-face` is limited with
+`unicode-range` and punctuation falls back to small IBM Plex Mono / Inter subsets from Google Fonts.
+Trial fonts are not licensed for a live website — buy web licences before launch and swap the files in
+`public/fonts/`; the fallback workaround can then be removed.
+
+## Motion
+
+- Labels (clock, hero label, word grid, section titles) scramble in from random glyphs on first view
+- Case-study rows: on hover the large title types itself in (a different face per project), the details
+  reshuffle and the project image follows the cursor
+- Showreel cuts between frames every 1.5s while on screen (no intro animation)
+- Rotating wireframe globe in the closing statement and on About
+- Footer wordmark marquee; hover on every image tightens the frame and pushes the photo in
 
 ## Content to finalise
 

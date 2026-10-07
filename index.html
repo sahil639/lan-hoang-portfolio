@@ -13,87 +13,88 @@
 
     <main id="main">
       <!-- ============ HERO ============ -->
-      <section class="home-hero container">
-        <p class="label home-hero__label" data-reveal="fade">( Lana Hoang — Creative Producer )</p>
+      <section class="hero">
+        <div class="clock" data-clock data-tz="%SITE_TZ%">
+          <p><span data-clock-time data-scramble-in>00 00</span> <span data-scramble-in>%SITE_TZ_LABEL%</span></p>
+          <p class="clock__places"><span data-scramble-in>%SITE_PLACE_1%</span><span data-scramble-in>%SITE_PLACE_2%</span></p>
+        </div>
 
-        <h1 class="statement statement--hero" data-split-lines>
-          <span class="dot" aria-hidden="true"></span> Lana Hoang is a creative producer turning <em>ideas</em> into
-          <em>real work</em> — from producing the project to art directing and set design.
+        <p class="hero__label" data-scramble-in>( Lana — Hoang )</p>
+
+        <h1 class="statement">
+          <span class="statement__line"><span class="statement__dot" aria-hidden="true"></span> Meet Lana Hoang, a <b>creative</b></span>
+          <span class="statement__line"><b>producer</b> who turns your ideas</span>
+          <span class="statement__line">into <b>real work</b>, from producing</span>
+          <span class="statement__line">to art direction &amp; set design</span>
         </h1>
 
         <div class="word-grid" aria-hidden="true">
-          <p data-reveal="up"><span>Idea-led</span><span>storytelling</span></p>
-          <p data-reveal="up" style="--delay: 0.08s"><span>Crafted</span><span>for</span><span>the</span><span>scroll</span></p>
-          <p data-reveal="up" style="--delay: 0.16s"><span>Built</span><span>to</span><span>perform</span></p>
+          <div class="word-grid__block">
+            <p data-scramble-in><span>Idea-led</span><span>production</span></p>
+            <p data-scramble-in><span>Crafted</span><span>to</span><span>connect</span></p>
+            <p data-scramble-in><span>With</span><span>every</span><span>audience</span></p>
+          </div>
+          <div class="word-grid__block">
+            <p></p>
+            <p data-scramble-in><span>Built</span><span>to</span></p>
+            <p data-scramble-in><span>Perform</span><span>and</span><span>last</span></p>
+          </div>
         </div>
       </section>
 
-      <!-- ============ FEATURE MEDIA ============ -->
-      <section class="feature container">
-        <div class="feature__frame">
-          <x-img name="product-10" alt="DOKI DOKI Lean Up range on a pink set, from Lana's commercial photoshoot" sizes="100vw" speed="0.08" class="feature__media" ratio="16 / 9" eager />
+      <!-- ============ SHOWREEL ============ -->
+      <section class="showreel" aria-label="Showreel">
+        <div class="showreel__frame" data-showreel>
+          <div class="showreel__slide is-active">
+            <x-img name="product-10" alt="DOKI DOKI Lean Up range on a pink set" sizes="70vw" class="showreel__media" ratio="16 / 9" eager />
+          </div>
+          <div class="showreel__slide showreel__slide--split">
+            <x-img name="product-01" alt="Model balancing CC Shot on her head" sizes="35vw" ratio="8 / 9" />
+            <x-img name="product-09" alt="Model balancing a Luna pouch on her head" sizes="35vw" ratio="8 / 9" />
+          </div>
+          <div class="showreel__slide">
+            <x-img name="model-04" alt="Close crop of eyes in teal shadow" sizes="70vw" ratio="16 / 9" />
+          </div>
+          <div class="showreel__slide showreel__slide--split">
+            <x-img name="set-02" alt="Retro diner set for Lean Up CC Shot" sizes="35vw" ratio="8 / 9" />
+            <x-img name="set-04" alt="Orange backdrop tablescape" sizes="35vw" ratio="8 / 9" />
+          </div>
+          <div class="showreel__slide showreel__slide--split">
+            <x-img name="food-07" alt="Red pepper pierced by a knife" sizes="35vw" ratio="8 / 9" />
+            <x-img name="food-02" alt="Red chilli on a fork" sizes="35vw" ratio="8 / 9" />
+          </div>
+          <div class="showreel__slide showreel__slide--split">
+            <x-img name="model-05" alt="Portrait under window light" sizes="35vw" ratio="8 / 9" />
+            <x-img name="product-11" alt="Model with Lean Up pouches on a pink set" sizes="35vw" ratio="8 / 9" />
+          </div>
         </div>
-        <div class="feature__caption">
-          <p class="label">Selected work</p>
-          <p class="label">2025 — %YEAR%</p>
-          <a class="label link-quiet" href="/case-studies/commercial-photoshoot">DOKI DOKI · Commercial Photoshoot →</a>
+        <div class="showreel__caption">
+          <span data-scramble-in>Showreel</span>
+          <span data-scramble-in>2025 — 2026</span>
+          <span data-scramble-in>Selected frames</span>
         </div>
       </section>
 
       <!-- ============ CASE STUDIES ============ -->
-      <section class="section container" aria-labelledby="cases-title">
-        <header class="section-head">
-          <h2 class="section-head__title" id="cases-title">Case Studies</h2>
-          <p class="label">05 projects</p>
-        </header>
+      <section class="cases-section" aria-labelledby="cases-title">
+        <h2 class="section-title" id="cases-title" data-scramble-in>Case Studies</h2>
         <!-- @include cases -->
-        <a class="explore" href="/case-studies">
-          <span data-scramble>Explore all case studies</span><span aria-hidden="true">→</span>
-        </a>
+        <a class="explore" href="/case-studies"><span data-scramble>Explore all case studies</span><span class="arrow" aria-hidden="true">⟶</span></a>
       </section>
 
-      <!-- ============ STATEMENT ============ -->
-      <section class="section container">
-        <p class="statement statement--xl" data-split-lines>
-          Every frame starts as a sketch, a set and a story worth telling.
+      <!-- ============ STATEMENT + GLOBE ============ -->
+      <section class="statement-section">
+        <p class="statement statement--plain">
+          <span class="statement__line">Lana <span class="statement__rule" aria-hidden="true"></span> Hoang turns rough</span>
+          <span class="statement__line">sketches into campaigns that feel</span>
+          <span class="statement__line">effortless, making every product</span>
+          <span class="statement__line">the moment people remember on a</span>
+          <span class="statement__line">crowded <span class="globe" aria-hidden="true" data-globe></span> feed.</span>
         </p>
-        <div class="statement-pair">
-          <x-img name="board-luna-skip-steps" alt="Storyboard for Luna Shot Collagen" sizes="(max-width: 760px) 100vw, 40vw" class="statement-pair__a" zoom />
-          <x-img name="set-02" alt="Retro diner set with red table and checkered floor, designed for Lean Up CC Shot" sizes="(max-width: 760px) 60vw, 22vw" class="statement-pair__b" speed="-0.06" zoom />
-          <p class="statement-pair__text" data-reveal="up">
-            Lana works across the whole production — writing scripts and storyboards, designing and dressing the set,
-            directing talent on the day, and shaping the final edit for the feed.
-          </p>
-        </div>
       </section>
 
       <!-- ============ PERFORMANCE ============ -->
-      <section class="section container" aria-labelledby="perf-title">
-        <div class="ledger">
-          <h2 class="label ledger__label" id="perf-title">Campaign performance</h2>
-          <ul class="ledger__rows">
-            <li data-reveal="up">
-              <span class="ledger__name">Luna Shot</span><span class="ledger__detail">“Is there an all-in-one solution?”</span><span class="ledger__value"><span data-count="4.1" data-suffix="M">4.1M</span> views</span>
-            </li>
-            <li data-reveal="up">
-              <span class="ledger__name">Lean Up Calorie Burning Juice</span><span class="ledger__detail">“Enjoy food. Skip the guilt”</span><span class="ledger__value"><span data-count="2" data-suffix="M">2M</span> views</span>
-            </li>
-            <li data-reveal="up">
-              <span class="ledger__name">Lean Up CC Shot</span><span class="ledger__detail">“Less bites. Same satisfaction”</span><span class="ledger__value"><span data-count="1.5" data-suffix="M">1.5M</span> views</span>
-            </li>
-            <li data-reveal="up">
-              <span class="ledger__name">Luna Shot</span><span class="ledger__detail">UV Protection</span><span class="ledger__value"><span data-count="1.5" data-suffix="M">1.5M</span> views</span>
-            </li>
-            <li data-reveal="up">
-              <span class="ledger__name">Lean Up CC Shot</span><span class="ledger__detail">“When the cravings meet their match”</span><span class="ledger__value"><span data-count="1.3" data-suffix="M">1.3M</span> views</span>
-            </li>
-            <li data-reveal="up">
-              <span class="ledger__name">Lean Up Calorie Burning Juice</span><span class="ledger__detail">“Skip the food coma”</span><span class="ledger__value"><span data-count="482" data-suffix="K">482K</span> views</span>
-            </li>
-          </ul>
-          <p class="ledger__total" data-reveal="up"><span class="label">Combined</span><span><span data-count="10.8" data-suffix="M+">10.8M+</span> Instagram views</span></p>
-        </div>
-      </section>
+      <!-- @include ledger -->
     </main>
 
     <!-- @include footer -->

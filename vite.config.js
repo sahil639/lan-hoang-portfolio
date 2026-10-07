@@ -34,7 +34,7 @@ function imgTag(a) {
   const cls = ['media', a.class].filter(Boolean).join(' ');
   const zoom = a.zoom ? ` data-zoom="/images/${largest}"` : '';
   const speed = a.speed ? ` data-speed="${a.speed}"` : '';
-  const reveal = a['no-reveal'] ? '' : ' data-reveal="image"';
+  const reveal = '';
   return (
     `<div class="${cls}" style="--ratio: ${ratio}"${reveal}${zoom}>` +
     `<img src="/images/${largest}" srcset="${srcset}" sizes="${a.sizes || '(max-width: 760px) 100vw, 50vw'}" ` +
@@ -48,7 +48,7 @@ function videoTag(a) {
   const largest = poster.files[poster.files.length - 1][0];
   const cls = ['video', a.class].filter(Boolean).join(' ');
   return (
-    `<div class="${cls}" style="--ratio: 9 / 16" data-video="${a.id}" data-reveal="image">` +
+    `<div class="${cls}" style="--ratio: 9 / 16" data-video="${a.id}">` +
     `<img src="/images/${largest}" width="${poster.w}" height="${poster.h}" alt="" loading="lazy" decoding="async">` +
     `<button class="video__play" type="button" aria-label="Play video: ${a.title}"><span class="video__icon" aria-hidden="true"></span><span>Play</span></button>` +
     `</div>`
@@ -67,6 +67,11 @@ function render(html, depth = 0) {
     .replace(/%SITE_EMAIL_HREF%/g, site.email ? `mailto:${site.email}` : '/contact')
     .replace(/%SITE_INSTAGRAM%/g, site.instagram || '#')
     .replace(/%SITE_LINKEDIN%/g, site.linkedin || '#')
+    .replace(/%SITE_LOCATION%/g, site.places.join(' — '))
+    .replace(/%SITE_PLACE_1%/g, site.places[0])
+    .replace(/%SITE_PLACE_2%/g, site.places[1])
+    .replace(/%SITE_TZ%/g, site.timezone)
+    .replace(/%SITE_TZ_LABEL%/g, site.timezoneLabel)
     .replace(/%YEAR%/g, String(new Date().getFullYear()));
 }
 

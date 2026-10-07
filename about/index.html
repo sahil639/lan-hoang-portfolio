@@ -9,118 +9,80 @@
     <!-- @include header -->
 
     <main id="main">
-      <!-- ============ INTRO WORDS ============ -->
-      <section class="about-hero container">
-        <div class="about-hero__words">
-          <p class="about-hero__col" data-split-lines>Idea-led creative production</p>
-          <p class="about-hero__col" data-split-lines>Crafted to connect with people</p>
-          <p class="about-hero__col" data-split-lines>Built for real results</p>
-        </div>
+      <section class="about-top grid">
+        <h1 class="statement"><span>Idea-led</span><span>creative</span><span>production</span></h1>
+        <p class="statement" aria-hidden="true"><span>Crafted to</span><span>connect with</span><span>people</span></p>
       </section>
 
-      <section class="about-intro container">
-        <div class="about-intro__media">
-          <x-img name="profile-02" alt="Portrait of Lana Hoang" sizes="(max-width: 760px) 100vw, 40vw" speed="-0.05" zoom />
-          <p class="about-intro__caption"><span class="label">Lana Hoang</span><span class="label">Creative Producer — Art Director</span></p>
-        </div>
-        <div class="about-intro__text">
-          <p class="statement statement--md" data-split-lines>
-            Lana blends a producer’s discipline with an art director’s eye to turn ideas into work people stop
-            scrolling for.
-          </p>
-          <p class="about-intro__body" data-reveal="up">
-            She takes a campaign from first idea to final frame — writing the storyboards, building the sets,
-            directing the shoot and shaping the edit. Her work for DOKI DOKI spans iTVCs, product photography and
-            performance video ads, reaching more than 10.8 million views on Instagram.
-          </p>
-          <p class="about-intro__body" data-reveal="up">
-            Away from client work she styles and shoots her own food photography, and steps in front of the camera as
-            a model — both of which make her better at directing what happens behind it.
-          </p>
-        </div>
-      </section>
-
-      <!-- ============ STATS ============ -->
-      <section class="section container">
-        <ul class="stats">
-          <li data-reveal="up"><span class="stats__num" data-count="10.8" data-suffix="M+">10.8M+</span><span class="label">Instagram views</span></li>
-          <li data-reveal="up"><span class="stats__num" data-count="6">6</span><span class="label">iTVC spots</span></li>
-          <li data-reveal="up"><span class="stats__num" data-count="9">9</span><span class="label">Meta video ads</span></li>
-          <li data-reveal="up"><span class="stats__num" data-count="3">3</span><span class="label">Product lines</span></li>
-        </ul>
-      </section>
-
-      <!-- ============ DISCIPLINES ============ -->
-      <section class="section container">
-        <div class="pair">
-          <div class="pair__item" data-reveal="up">
-            <h2 class="pair__title">Producing</h2>
-            <p>
-              Budgets, schedules, crews and call sheets — the unglamorous structure that lets a creative idea survive
-              contact with a real shoot day. Lana keeps projects moving and every department pointed at the same goal.
-            </p>
+      <section class="about-feature grid">
+        <div>
+          <div class="word-grid" aria-hidden="true">
+            <div class="word-grid__block">
+              <p data-scramble-in><span>Built</span><span>for</span></p>
+              <p data-scramble-in><span>Real</span><span>lasting</span><span>results</span></p>
+            </div>
           </div>
-          <div class="pair__item" data-reveal="up">
-            <h2 class="pair__title">Art direction</h2>
-            <p>
-              Colour, set, props, wardrobe and light. Lana builds a visual world for every product — then directs talent
-              inside it so each frame feels spontaneous, but stays on brief.
-            </p>
-          </div>
+          <x-img name="profile-02" alt="Portrait of Lana Hoang" sizes="(max-width: 760px) 100vw, 33vw" ratio="16 / 10" zoom />
+          <p class="about-feature__caption"><span data-scramble-in>%SITE_LOCATION%</span><span data-scramble-in>Creative producer</span></p>
         </div>
       </section>
 
-      <!-- ============ PROCESS ============ -->
-      <section class="section container" aria-labelledby="process-title">
-        <header class="section-head">
-          <h2 class="section-head__title" id="process-title">Process</h2>
-          <p class="label">A — F</p>
-        </header>
-        <ol class="process">
-          <li data-reveal="up"><span class="process__letter">A</span><h3>Brief</h3><p>Understanding the product, the audience and what success looks like.</p></li>
-          <li data-reveal="up"><span class="process__letter">B</span><h3>Concept &amp; script</h3><p>One honest moment and one line people remember.</p></li>
-          <li data-reveal="up"><span class="process__letter">C</span><h3>Storyboard</h3><p>Every beat, frame and product moment drawn before it’s shot.</p></li>
-          <li data-reveal="up"><span class="process__letter">D</span><h3>Set &amp; casting</h3><p>Designing, sourcing and dressing the world the story lives in.</p></li>
-          <li data-reveal="up"><span class="process__letter">E</span><h3>Shoot</h3><p>Directing talent and art directing each frame on the day.</p></li>
-          <li data-reveal="up"><span class="process__letter">F</span><h3>Edit &amp; deliver</h3><p>Cutting for the feed and delivering formats ready to perform.</p></li>
+      <section class="about-copy grid">
+        <div class="about-copy__left">
+          <p class="bold-copy">Lana blends a producer’s discipline with an art director’s eye to turn ideas into work people stop scrolling for.</p>
+          <p class="body-copy">She takes a campaign from first idea to final frame — writing the storyboards, building the sets, directing the shoot and shaping the edit. Her work for DOKI DOKI spans iTVCs, product photography and performance video ads, reaching more than 10.8 million views on Instagram.</p>
+        </div>
+        <div class="about-copy__right">
+          <p class="discipline-row"><span data-scramble-in>Producing</span><span class="globe" data-globe aria-hidden="true"></span><span data-scramble-in>Art direction</span></p>
+          <p class="body-copy">Budgets, schedules, crews and call sheets keep an idea alive on a real shoot day. Colour, set, props, wardrobe and light give it a world to live in. Away from client work, Lana styles and shoots her own food photography and steps in front of the camera as a model — both of which make her better at directing what happens behind it.</p>
+        </div>
+      </section>
+
+      <section class="process grid" aria-labelledby="process-title">
+        <h2 class="process__title" id="process-title">Process</h2>
+        <ol class="process__col">
+          <li><span>A</span><b>Brief</b></li>
+          <li><span>B</span><b>Concept and script</b></li>
+          <li><span>C</span><b>Storyboard</b></li>
         </ol>
-      </section>
-
-      <!-- ============ BEHIND THE SCENES ============ -->
-      <section class="section container">
-        <div class="about-bts">
-          <x-img name="bts-04" alt="Lana directing talent on set in front of a yellow backdrop" sizes="(max-width: 760px) 100vw, 45vw" zoom />
-          <x-img name="bts-01" alt="Lana checking lights with the photographer" sizes="(max-width: 760px) 50vw, 22vw" speed="0.06" zoom />
-          <p class="about-bts__text" data-reveal="up">
-            <span class="label">On set</span>
-            The best part of the job is the day itself — when the storyboard, the set and the people finally meet in
-            front of the camera.
-          </p>
+        <ol class="process__col" start="4">
+          <li><span>D</span><b>Set and casting</b></li>
+          <li><span>E</span><b>Shoot</b></li>
+          <li><span>F</span><b>Edit and deliver</b></li>
+        </ol>
+        <div class="process__note">
+          <p class="body-copy">Every project moves through the same six steps, from understanding the product and the audience to cutting formats ready to perform on the feed. Each step is drawn, planned and checked before the camera rolls, so the shoot day is spent on craft.</p>
         </div>
       </section>
 
-      <!-- ============ SERVICES ============ -->
-      <section class="section container" aria-labelledby="services-title">
-        <header class="section-head">
-          <h2 class="section-head__title" id="services-title">Services</h2>
-          <p class="label">What Lana can take on</p>
-        </header>
-        <div class="services">
-          <div class="services__col" data-reveal="up">
-            <p class="label">A</p>
-            <h3>Pre-production</h3>
-            <ul><li>Creative concept</li><li>Scriptwriting</li><li>Storyboarding</li><li>Moodboards &amp; references</li><li>Casting</li><li>Location scouting</li></ul>
-          </div>
-          <div class="services__col" data-reveal="up">
-            <p class="label">B</p>
-            <h3>Production</h3>
-            <ul><li>Creative producing</li><li>Art direction</li><li>Set design &amp; dressing</li><li>Prop &amp; food styling</li><li>Talent direction</li></ul>
-          </div>
-          <div class="services__col" data-reveal="up">
-            <p class="label">C</p>
-            <h3>Post-production</h3>
-            <ul><li>Video editing</li><li>Performance ads for Meta</li><li>Photo selection</li><li>Social-first deliverables</li></ul>
-          </div>
+      <!-- @include ledger -->
+
+      <section class="on-set grid" aria-labelledby="on-set-title">
+        <div class="on-set__text">
+          <h2 id="on-set-title">On set</h2>
+          <p class="body-copy">The best part of the job is the day itself — when the storyboard, the set and the people finally meet in front of the camera. Lana runs the floor as art director: checking light, styling product between takes and keeping every frame on brief.</p>
+        </div>
+        <div class="on-set__media">
+          <x-img name="bts-04" alt="Lana directing talent on set in front of a yellow backdrop" sizes="(max-width: 760px) 100vw, 33vw" ratio="1 / 1" zoom />
+        </div>
+      </section>
+
+      <section class="services grid" aria-labelledby="services-title">
+        <h2 class="services__title" id="services-title">Services</h2>
+        <div class="services__col">
+          <p>A</p>
+          <h3>Pre-production</h3>
+          <ul><li>Creative concept</li><li>Scriptwriting</li><li>Storyboarding</li><li>Moodboards and references</li><li>Casting</li><li>Location scouting</li></ul>
+        </div>
+        <div class="services__col">
+          <p>B</p>
+          <h3>Production</h3>
+          <ul><li>Creative producing</li><li>Art direction</li><li>Set design and dressing</li><li>Prop and food styling</li><li>Talent direction</li><li>On-set management</li></ul>
+        </div>
+        <div class="services__col">
+          <p>C</p>
+          <h3>Post-production</h3>
+          <ul><li>Video editing</li><li>Performance ads for Meta</li><li>Photo selection</li><li>Social-first deliverables</li><li>Format versioning</li><li>Delivery</li></ul>
         </div>
       </section>
     </main>
